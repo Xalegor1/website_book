@@ -33,9 +33,14 @@ class BookInstanceAdmin(admin.ModelAdmin):
     )
 
 
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    pass
+
+
+
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(Genre)
+# admin.site.register(Genre)
 admin.site.register(Language)
 admin.site.register(Status)
 # admin.site.register(BookInstance)
-

@@ -47,7 +47,7 @@ class Book(models.Model):
 
     def display_author(self):
         return ', '.join([author.last_name for author in self.author.all()])
-    display_author.short_description = 'Авторы'    
+    display_author.short_description = 'Авторы'     
 
 
 
