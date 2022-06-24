@@ -1,7 +1,7 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     {% block title %}<title>Мир книг</title>{% endblock title %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{% static 'catalog/css/styles.css' %}">
     {% block head %}
+
+    
     {% endblock head %}
 </head>
 <body>
@@ -18,15 +20,14 @@
         <div class="row">
             <div class="col-sm-2">
                 {% block sidebar %}
-                <ul class="sidebar-nav">
-                    <li><a href="{% url 'index' %}">Главная страница</а></li>
-                    <li><a href="{% url 'books' %}">Bce книги</а></li>
-                    <li><a href="{% url 'authors' %}">Bce авторы</а></li>
-                </ul>
+                    <p><a href="{% url 'index' %}">Главная страница</а></p>
+                    <p><a href="{% url 'books' %}">Bce книги</а></p>
+                    <p><a href="{% url 'authors' %}">Bce авторы</a></p>
                 {% endblock %}
             </div>    
             <div class="col-sm-10 ">
-            {% block content %}{% endblock %}
+            {% block content %}          
+            {% endblock %}
             {% block pagination %}
                 {% if is_paginated %}
                     <div class="pagination">
@@ -45,8 +46,6 @@
                 {% endif %}
             {% endblock %}
             
-
-
                 {% block footer %}
                     {% block copyright %}
                         <p>Copyright ООО "Люди и книги", 2020. Все права защищены</р>
